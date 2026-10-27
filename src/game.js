@@ -52,7 +52,7 @@ export class Game {
     }
 
     processarResultado(fase, dado) {
-        if (dado >= 17) {
+        if (dado > 15) {
             this.pontos += fase.pontosSucesso;
             return { venceu: true, texto: fase.sucessoText, tipo: 'sucesso' };
         }
