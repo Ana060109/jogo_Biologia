@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG - A Busca pelo Elemento X</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+    <div class="crt-container">
+        <h1>A BUSCA PELO ELEMENTO X</h1>
+
+        <div class="ascii-art" id="art">
+   ___   
+  |   |  
+  |___|  
+ /     \ 
+/_______\
+        </div>
+
+        <div class="status-bar">
+            <span>PONTOS: <span id="pontos">100</span></span>
+            <span>FASE: <span id="fase">-</span></span>
+        </div>
+
+        <div class="text-box" id="historia">
+            Ano 1898. Você é a Dra. Lídia, uma pioneira na química. Seu objetivo é isolar novos elementos para a Tabela Periódica. Cada experimento é uma jornada perigosa e volátil.
+            <br><br>
+            As missões agora ocorrem em ordem imprevisível e exigirão seu conhecimento químico! Prepare-se.
+        </div>
+
+        <div id="quiz-options" style="display: none; flex-direction: column; gap: 10px; margin-bottom: 20px;"></div>
+
+        <div class="dice-result" id="resultado-dado"></div>
+
+        <button id="btn-acao" type="button">INICIAR EXPERIMENTO</button>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>

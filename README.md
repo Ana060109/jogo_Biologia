@@ -1,0 +1,32 @@
+# A Busca pelo Elemento X
+
+Jogo em estilo RPG de texto com tema de ciência, radioatividade e história da química.
+
+## Estrutura
+
+- `index.html` — página principal
+- `src/styles.css` — estilos visuais do jogo
+- `src/main.js` — fluxo principal da aplicação
+- `src/game.js` — regra de negócio e estado do jogo
+- `src/ui.js` — funções de renderização e manipulação da tela
+- `src/data/fases.js` — banco de fases e missões
+- `src/utils/random.js` — utilitários de aleatoriedade
+
+## Como rodar
+
+1. Acesse a pasta do projeto.
+2. Inicie um servidor estático, por exemplo:
+
+```bash
+python -m http.server 8000
+```
+
+3. Abra no navegador:
+
+```text
+http://localhost:8000/index.html
+```
+
+## Observação
+
+A estrutura foi separada em módulos para facilitar manutenção, testes e futuras evoluções do projeto no GitHub.
