@@ -47,11 +47,48 @@ h1 {
 }
 
 .ascii-art {
-    white-space: pre;
     text-align: center;
-    font-size: 0.8rem;
     margin: 10px 0;
     color: #33ff33;
+}
+
+.art-scene {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 92px;
+}
+
+.ascii-graphic {
+    display: inline-block;
+    margin: 0;
+    white-space: pre;
+    font-size: 0.8rem;
+    line-height: 1.1;
+    color: inherit;
+    font-family: 'Press Start 2P', monospace;
+}
+
+.personagem-efeito {
+    width: 86px;
+    height: auto;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 0 8px rgba(255, 51, 51, 0.5));
+}
+
+.bad-event {
+    color: #ff3333;
+    text-shadow: 0 0 5px #ff3333;
+}
+
+.good-event {
+    color: #55ffff;
+    text-shadow: 0 0 5px #55ffff;
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
 }
 
 .status-bar {

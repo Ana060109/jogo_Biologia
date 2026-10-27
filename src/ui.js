@@ -24,15 +24,30 @@ export function mudarArte(tipo) {
     const elArt = document.getElementById('art');
     if (!elArt) return;
 
+    const asciiInicio = "   ___   \n  |   |  \n  |___|  \n /     \\ \n/_______\\";
+    const asciiSucesso = "   .*.   \n  (   )  \n  |___|  \n / *   \\ \n/_______\\";
+    const asciiFalha = "  \\ | /  \n --BOOM--\n  / | \\  \n   _|_   \n  /___\\  ";
+
+    let ascii = asciiInicio;
+    let classe = 'ascii-art';
+
     if (tipo === 'inicio') {
-        elArt.innerText = "   ___   \n  |   |  \n  |___|  \n /     \\ \n/_______\\";
+        ascii = asciiInicio;
     } else if (tipo === 'sucesso') {
-        elArt.innerText = "   .*.   \n  (   )  \n  |___|  \n / *   \\ \n/_______\\";
-        elArt.className = 'ascii-art good-event blink';
+        ascii = asciiSucesso;
+        classe = 'ascii-art good-event blink';
     } else if (tipo === 'falha') {
-        elArt.innerText = "  \\ | /  \n --BOOM--\n  / | \\  \n   _|_   \n  /___\\  ";
-        elArt.className = 'ascii-art bad-event';
+        ascii = asciiFalha;
+        classe = 'ascii-art bad-event';
     }
+
+    elArt.className = classe;
+    elArt.innerHTML = `
+        <div class="art-scene">
+            <pre class="ascii-graphic">${ascii}</pre>
+            <img src="./src/personagem/ligia.png" alt="Personagem Lídia" class="personagem-efeito" />
+        </div>
+    `;
 
     setTimeout(() => {
         elArt.className = 'ascii-art';
