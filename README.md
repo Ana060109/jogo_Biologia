@@ -30,3 +30,4 @@ http://localhost:8000/index.html
 ## Observação
 
 A estrutura foi separada em módulos para facilitar manutenção, testes e futuras evoluções do projeto no GitHub.
+A trilha sonora pertence ao jogo que se chama "Space Harrier OST Track 1" de 1985.

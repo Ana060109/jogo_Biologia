@@ -22,6 +22,51 @@ body {
     overflow: hidden;
 }
 
+.music-control {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.music-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: auto;
+    margin: 0;
+    padding: 8px 10px;
+    font-size: 0.55rem;
+}
+
+.music-icon {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+}
+
+.music-slash {
+    display: none;
+}
+
+.music-toggle.is-muted .music-slash {
+    display: block;
+}
+
+.music-toggle.is-muted {
+    border-color: #668066;
+    color: #668066;
+}
+
+.music-toggle.is-muted:hover:not(:disabled) {
+    background-color: #668066;
+    color: #051505;
+}
+
 .crt-container::before {
     content: " ";
     display: block;

@@ -42,7 +42,7 @@ export class Game {
         const acertou = indexEscolhido === fase.respostaCorreta;
 
         if (acertou) {
-            this.pontos += 15;
+            this.pontos += 14;
         } else {
             this.pontos -= 10;
         }

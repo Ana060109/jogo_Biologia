@@ -7,6 +7,68 @@ const elHistoria = document.getElementById('historia');
 const elQuiz = document.getElementById('quiz-options');
 const elDado = document.getElementById('resultado-dado');
 const elBtnAcao = document.getElementById('btn-acao');
+const elAudio = document.getElementById('trilha-sonora');
+const elBtnMusica = document.getElementById('btn-musica');
+const elEstadoMusica = document.getElementById('estado-musica');
+
+let musicaLigada = true;
+let primeiraReproducao = true;
+let aguardandoMetadados = false;
+
+function atualizarBotaoMusica() {
+    const textoAcao = musicaLigada ? 'Desligar música' : 'Ligar música';
+    elBtnMusica.setAttribute('aria-pressed', String(musicaLigada));
+    elBtnMusica.setAttribute('aria-label', textoAcao);
+    elBtnMusica.title = textoAcao;
+    elEstadoMusica.innerText = `MÚSICA ${musicaLigada ? 'LIGADA' : 'DESLIGADA'}`;
+    elBtnMusica.classList.toggle('is-muted', !musicaLigada);
+}
+
+function tocarMusica() {
+    if (!musicaLigada) return;
+
+    if (elAudio.readyState < HTMLMediaElement.HAVE_METADATA) {
+        if (!aguardandoMetadados) {
+            aguardandoMetadados = true;
+            elAudio.addEventListener('loadedmetadata', () => {
+                aguardandoMetadados = false;
+                tocarMusica();
+            }, { once: true });
+        }
+        return;
+    }
+
+    elAudio.play().then(() => {
+        if (musicaLigada && primeiraReproducao) {
+            elAudio.currentTime = 5;
+            primeiraReproducao = false;
+        }
+    }).catch((erro) => {
+        if (erro.name !== 'NotAllowedError' && erro.name !== 'AbortError') {
+            console.error('Não foi possível reproduzir a trilha sonora.', erro);
+        }
+    });
+}
+
+elAudio.addEventListener('ended', () => {
+    if (!musicaLigada) return;
+
+    elAudio.currentTime = 5;
+    tocarMusica();
+});
+
+elBtnMusica.addEventListener('click', () => {
+    musicaLigada = !musicaLigada;
+    atualizarBotaoMusica();
+
+    if (musicaLigada) {
+        tocarMusica();
+    } else {
+        elAudio.pause();
+    }
+});
+
+elBtnAcao.addEventListener('click', tocarMusica);
 
 function atualizarUI() {
     atualizarIndicadores({
@@ -105,6 +167,7 @@ function verificarFimDeJogo() {
         elHistoria.innerHTML = `<span class="bad-event">FIM DE JOGO! VOCÊ MORREU.</span><br><br>${faseAtualInfo.morteText}<br><br>Seus pontos chegaram a zero. A ciência exige sacrifícios e, desta vez, ele foi fatal.`;
         elBtnAcao.innerText = 'TENTAR NOVAMENTE';
         elBtnAcao.onclick = iniciarJogo;
+        mudarArte('inicio');
         elBtnAcao.disabled = false;
         game.rolagemEmAndamento = false;
         return;
@@ -116,6 +179,8 @@ function verificarFimDeJogo() {
         elHistoria.innerHTML = `<span class="good-event">VITÓRIA DA CIÊNCIA!</span><br><br>Parabéns, Dra. Lídia! Você expandiu os horizontes da Tabela Periódica contra todas as probabilidades estatísticas (e o machismo da época). Seu legado perdurará para sempre!<br><br>Pontuação Final: ${game.pontos}`;
         elBtnAcao.innerText = 'JOGAR NOVAMENTE (NOVA ORDEM)';
         elBtnAcao.onclick = iniciarJogo;
+        mudarArte('inicio');
+        atualizarBotaoMusica();
         elBtnAcao.disabled = false;
         game.rolagemEmAndamento = false;
         return;
@@ -143,3 +208,4 @@ game.setStateHandler(() => {
 });
 
 elBtnAcao.onclick = iniciarJogo;
+mudarArte('inicio');
