@@ -27,6 +27,10 @@ python -m http.server 8000
 http://localhost:8000/index.html
 ```
 
+## Fases do jogo
+
+Cada partida tem 20 fases: 13 desafios de múltipla escolha, incluindo identificação, biologia e segurança radiológica, e 7 fases resolvidas com o dado de 20 lados. A primeira fase é sempre uma pergunta escolhida aleatoriamente, diferente da pergunta inicial da partida anterior.
+
 ## Observação
 
 A estrutura foi separada em módulos para facilitar manutenção, testes e futuras evoluções do projeto no GitHub.

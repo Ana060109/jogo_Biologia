@@ -83,13 +83,13 @@ function carregarFase() {
     elHistoria.innerHTML = `<strong>${fase.titulo}</strong><br><br>${fase.descricao}`;
     elDado.innerHTML = '';
 
-    if (fase.tipo === 'descoberta') {
+    if (fase.tipo === 'escolha') {
         elBtnAcao.style.display = 'none';
         elQuiz.style.display = 'flex';
         elQuiz.innerHTML = '';
 
         fase.opcoes.forEach((opcao, index) => {
-            const btn = criarBotaoOpcao(opcao, () => responderDescoberta(index, fase));
+            const btn = criarBotaoOpcao(opcao, () => responderEscolha(index, fase));
             elQuiz.appendChild(btn);
         });
     } else {
@@ -101,22 +101,21 @@ function carregarFase() {
     }
 }
 
-function responderDescoberta(indexEscolhido, fase) {
+function responderEscolha(indexEscolhido, fase) {
+    elQuiz.querySelectorAll('button').forEach((botao) => {
+        botao.disabled = true;
+    });
     elQuiz.style.display = 'none';
-    elBtnAcao.style.display = 'block';
 
-    const acertou = game.responderDescoberta(indexEscolhido, fase);
+    const acertou = game.responderEscolha(indexEscolhido, fase);
+    const classe = acertou ? 'good-event' : 'bad-event';
+    const pontos = acertou ? '+15' : '-10';
 
-    if (acertou) {
-        elHistoria.innerHTML += `<br><br><span class="good-event">${fase.msgAcerto} (+15 Pts de Intuição)</span><br>Agora teste o experimento.`;
-    } else {
-        elHistoria.innerHTML += `<br><br><span class="bad-event">${fase.msgErro} (-10 Pts de Intuição)</span><br>Avance e teste o experimento mesmo assim.`;
-    }
-
+    elHistoria.innerHTML += `<br><br><span class="${classe}">${acertou ? fase.msgAcerto : fase.msgErro} (${pontos} pontos)</span>`;
+    mudarArte(acertou ? 'sucesso' : 'falha');
     atualizarUI();
-    elBtnAcao.innerText = fase.acao;
-    elBtnAcao.onclick = rolarDado;
-    elBtnAcao.disabled = false;
+
+    setTimeout(verificarFimDeJogo, 1200);
 }
 
 function rolarDado() {

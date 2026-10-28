@@ -29,7 +29,19 @@ export class Game {
         this.faseAtual = 0;
         this.pontos = 100;
         this.rolagemEmAndamento = false;
-        this.fasesSorteadas = embaralhar([...todasAsFases]).slice(0, 15);
+        const fasesDeEscolha = todasAsFases.filter((fase) => fase.tipo === 'escolha');
+        const fasesDeDado = todasAsFases.filter((fase) => fase.tipo === 'normal');
+        const faseInicialAnterior = this.fasesSorteadas[0];
+        const fasesPossiveisParaInicio = fasesDeEscolha.filter((fase) => fase !== faseInicialAnterior);
+        const faseInicial = embaralhar([...fasesPossiveisParaInicio])[0];
+        const escolhasSorteadas = embaralhar(
+            fasesDeEscolha.filter((fase) => fase !== faseInicial)
+        ).slice(0, 12);
+        const fasesComDadoSorteadas = embaralhar([...fasesDeDado]).slice(0, 7);
+        this.fasesSorteadas = [
+            faseInicial,
+            ...embaralhar([...escolhasSorteadas, ...fasesComDadoSorteadas]),
+        ];
         this.notificar();
     }
 
@@ -38,11 +50,11 @@ export class Game {
         this.notificar();
     }
 
-    responderDescoberta(indexEscolhido, fase) {
+    responderEscolha(indexEscolhido, fase) {
         const acertou = indexEscolhido === fase.respostaCorreta;
 
         if (acertou) {
-            this.pontos += 14;
+            this.pontos += 15;
         } else {
             this.pontos -= 10;
         }

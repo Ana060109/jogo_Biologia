@@ -22,48 +22,33 @@ export const todasAsFases = [
         morteText: "A explosão do ácido nítrico fervente foi fatal. Seus graves ferimentos e a inalação massiva de gases corrosivos encerraram sua jornada prematuramente."
     },
     {
-        tipo: "descoberta",
+        tipo: "escolha",
         titulo: "Descoberta: O Elemento da Pátria",
         descricao: "Ao processar o minério de urânio, você encontra uma fração que precipita junto com o Bismuto, porém é 400 vezes mais radioativa que o Urânio puro. Que novo elemento é este, que você batizará em homenagem à sua terra natal?",
         opcoes: ["Polônio", "Frâncio", "Gálio"],
         respostaCorreta: 0,
         msgAcerto: "Dedução Brilhante! O Polônio (Po) foi sua primeira grande descoberta.",
         msgErro: "Erro. Em homenagem à Polônia, a resposta correta era o Polônio.",
-        acao: "Rolar d20: Isolar Polônio",
-        sucessoText: "SUCESSO! A linha espectral confirma uma substância totalmente nova! (+35 Pontos)",
-        falhaText: "FALHA! A amostra decaiu antes da medição final no espectrômetro. (-20 Pontos)",
-        pontosSucesso: 35,
-        pontosFalha: 20,
         morteText: "A altíssima e desconhecida radiação do Polônio destruiu sua medula óssea de forma irreversível. Você tombou diante da periculosidade de sua própria descoberta."
     },
     {
-        tipo: "descoberta",
+        tipo: "escolha",
         titulo: "Descoberta: O Brilho Azul",
         descricao: "Outra fração do minério, rica em Bário, emite um brilho azulado no escuro e um calor constante. Sua radioatividade é colossal, um milhão de vezes maior que o Urânio. Qual é este poderoso elemento?",
         opcoes: ["Criptônio", "Rádio", "Plutônio"],
         respostaCorreta: 1,
         msgAcerto: "Exato! O Rádio (Ra) emite tanta energia que gera luminescência e calor constantes.",
         msgErro: "Incorreto. Pelas propriedades alcalino-terrosas, trata-se do Rádio.",
-        acao: "Rolar d20: Cristalizar Cloreto de Rádio",
-        sucessoText: "SUCESSO! Você obteve 1 decigrama de cloreto de rádio puro após tratar três toneladas de minério! (+50 Pontos)",
-        falhaText: "FALHA! A alta radiação queimou os frascos e suas mãos, atrasando severamente a pesquisa. (-30 Pontos)",
-        pontosSucesso: 50,
-        pontosFalha: 30,
         morteText: "Fascinada pelo brilho azul do Rádio, você se expôs a doses contínuas e letais de radiação ionizante, causando falência múltipla dos órgãos."
     },
     {
-        tipo: "descoberta",
+        tipo: "escolha",
         titulo: "Descoberta: O Gás Fantasma",
         descricao: "Ao manipular os compostos recém-descobertos, você percebe que eles emanam um misterioso gás denso e altamente radioativo, que se acumula no fundo dos recipientes. Que gás nobre letal é este?",
         opcoes: ["Hélio", "Radônio", "Argônio"],
         respostaCorreta: 1,
         msgAcerto: "Perfeito! O decaimento radioativo contínuo gera o letal gás Radônio (Rn).",
         msgErro: "Erro de cálculo. Trata-se do Radônio, gás originado do decaimento do Rádio.",
-        acao: "Rolar d20: Conter o Gás",
-        sucessoText: "SUCESSO! Você conseguiu selar o gás em ampolas para utilizá-lo em tratamentos médicos. (+30 Pontos)",
-        falhaText: "FALHA! A pressão quebrou a redoma de vidro e o laboratório precisou ser rapidamente evacuado. (-20 Pontos)",
-        pontosSucesso: 30,
-        pontosFalha: 20,
         morteText: "O vazamento silencioso do letal gás Radônio asfixiou e irradiou você por dentro em seu próprio laboratório enquanto trabalhava isolada noite adentro."
     },
     {
@@ -111,18 +96,13 @@ export const todasAsFases = [
         morteText: "A hipotermia severa combinada com a inalação de gases tóxicos no ambiente fechado e gelado derrubaram sua imunidade fatalmente."
     },
     {
-        tipo: "descoberta",
+        tipo: "escolha",
         titulo: "Descoberta: O Instrumento de Medida",
         descricao: "Para medir a fraca corrente elétrica no ar ionizado, você usa uma invenção baseada em cristais de quartzo que geram eletricidade quando comprimidos. Qual é o princípio desse instrumento?",
         opcoes: ["Eletromagnetismo", "Piezoeletricidade", "Termodinâmica"],
         respostaCorreta: 1,
         msgAcerto: "Correto! O eletrômetro piezoelétrico foi essencial para medir a radioatividade com precisão.",
         msgErro: "Incorreto. A resposta é Piezoeletricidade, descoberta pioneira de Pierre Curie.",
-        acao: "Rolar d20: Calibrar Eletrômetro",
-        sucessoText: "SUCESSO! Medições precisas comprovam que a radiação é uma propriedade atômica intrínseca! (+30 Pontos)",
-        falhaText: "FALHA! O equipamento descalibrou no meio da medição, invalidando dias de dados. (-15 Pontos)",
-        pontosSucesso: 30,
-        pontosFalha: 15,
         morteText: "Um forte choque elétrico acidental de alta tensão durante a manutenção das placas metálicas parou seu coração."
     },
     {
@@ -159,18 +139,13 @@ export const todasAsFases = [
         morteText: "O luto inconsolável minou sua vontade de viver. Sem se alimentar ou dormir adequadamente por semanas, o esgotamento mental a levou."
     },
     {
-        tipo: "descoberta",
+        tipo: "escolha",
         titulo: "Descoberta: O Segundo Prêmio Nobel",
         descricao: "Anos após dividir o Nobel de Física, a Academia Sueca reconhece você novamente, desta vez como a única laureada. Por qual feito você ganhou este segundo Nobel?",
         opcoes: ["Nobel de Medicina (Raio-X)", "Nobel de Química (Isolamento do Rádio)", "Nobel da Paz (Unidades Curie)"],
         respostaCorreta: 1,
         msgAcerto: "Perfeito! O Prêmio Nobel de Química de 1911 coroou o isolamento do elemento Rádio metálico.",
         msgErro: "Erro. Você ganhou o de Química pelo isolamento de elementos puros, um feito histórico.",
-        acao: "Rolar d20: Reivindicar o Prêmio",
-        sucessoText: "SUCESSO! Você viaja a Estocolmo e faz um discurso memorável, consolidando sua autoridade mundial. (+45 Pontos)",
-        falhaText: "FALHA! Escândalos da imprensa marrom parisiense quase fazem o comitê cancelar sua premiação, gerando extremo estresse. (-25 Pontos)",
-        pontosSucesso: 45,
-        pontosFalha: 25,
         morteText: "A perseguição impiedosa da imprensa e o ataque às portas de sua casa por turbas enfurecidas resultaram em uma tragédia irreparável."
     },
     {
@@ -207,18 +182,13 @@ export const todasAsFases = [
         morteText: "A inalação aguda do 'Gás Torônio' em um ambiente mal ventilado destruiu completamente seus alvéolos pulmonares."
     },
     {
-        tipo: "descoberta",
+        tipo: "escolha",
         titulo: "Descoberta: A Cura Destrutiva",
         descricao: "Médicos percebem que a radiação causa úlceras na pele de forma rápida. Você deduz uma aplicação revolucionária para essa propriedade biológica.",
         opcoes: ["Tratar infecções virais", "Destruir células tumorais", "Sintetizar antibióticos"],
         respostaCorreta: 1,
         msgAcerto: "Exato! Nasce a Radioterapia: direcionar a destruição celular para tumores cancerígenos.",
         msgErro: "Incorreto. A propriedade de destruir tecidos foi aplicada para erradicar células cancerígenas (Radioterapia).",
-        acao: "Rolar d20: Encaminhar Uso Médico",
-        sucessoText: "SUCESSO! Hospitais relatam que a radiação reduziu tumores inoperáveis! (+50 Pontos)",
-        falhaText: "FALHA! A dose é difícil de controlar e os pacientes sofrem com fortes queimaduras. (-25 Pontos)",
-        pontosSucesso: 50,
-        pontosFalha: 25,
         morteText: "Testando doses de radioterapia em seu próprio braço com excesso de confiança, você adquiriu um tumor radiogênico intratável."
     },
     {
@@ -242,5 +212,115 @@ export const todasAsFases = [
         pontosSucesso: 30,
         pontosFalha: 30,
         morteText: "Sua recusa obstinada em admitir os danos da radiação fez você negligenciar as defesas e sua medula óssea secou fatalmente."
+    },
+    {
+        tipo: "escolha",
+        titulo: "Identificação: O Metal 92",
+        descricao: "Uma amostra tem número atômico 92 e o símbolo U. Qual elemento foi encontrado?",
+        opcoes: ["Urânio", "Tório", "Rádio"],
+        respostaCorreta: 0,
+        msgAcerto: "Correto! O símbolo U e o número atômico 92 identificam o Urânio.",
+        msgErro: "A amostra é Urânio (U), de número atômico 92.",
+        morteText: "A exposição acumulada ao material radioativo sem os cuidados adequados encerrou sua pesquisa."
+    },
+    {
+        tipo: "escolha",
+        titulo: "Identificação: O Gás Nobre",
+        descricao: "Um gás radioativo pode se acumular em ambientes fechados como resultado do decaimento de elementos presentes no solo. Qual é ele?",
+        opcoes: ["Radônio", "Neônio", "Hidrogênio"],
+        respostaCorreta: 0,
+        msgAcerto: "Isso mesmo: o Radônio é um gás radioativo que pode se acumular em ambientes fechados.",
+        msgErro: "A resposta é Radônio, um gás radioativo que exige monitoramento e controle.",
+        morteText: "A exposição prolongada ao gás radioativo em um ambiente sem controle foi fatal."
+    },
+    {
+        tipo: "escolha",
+        titulo: "Contenção: Suspeita de Radônio",
+        descricao: "Uma medição indica possível acúmulo de radônio no laboratório. Qual é a atitude mais segura?",
+        opcoes: ["Restringir o acesso e chamar profissionais para avaliar e controlar a fonte", "Tampar as frestas e continuar trabalhando", "Tentar recolher o gás em um recipiente improvisado"],
+        respostaCorreta: 0,
+        msgAcerto: "Boa decisão! Restrinja o acesso e deixe a avaliação e a mitigação com profissionais qualificados.",
+        msgErro: "Não improvise a contenção. Restrinja o acesso e solicite avaliação de profissionais qualificados.",
+        morteText: "Ignorar o alerta e permanecer em uma área possivelmente contaminada causou uma exposição fatal."
+    },
+    {
+        tipo: "escolha",
+        titulo: "Contenção: Amostra Radioativa",
+        descricao: "Você precisa guardar uma amostra radioativa para análise posterior. Qual opção é a mais adequada?",
+        opcoes: ["Usar recipiente apropriado, identificado e sob controle de acesso", "Guardar em um frasco comum sem identificação", "Deixar a amostra aberta sobre a bancada"],
+        respostaCorreta: 0,
+        msgAcerto: "Correto! A amostra deve ficar em recipiente apropriado, identificada e com acesso controlado.",
+        msgErro: "A amostra precisa de recipiente apropriado, identificação e controle de acesso.",
+        morteText: "O armazenamento improvisado permitiu uma exposição perigosa e fatal no laboratório."
+    },
+    {
+        tipo: "escolha",
+        titulo: "Contenção: Material Desconhecido",
+        descricao: "Um frasco sem rótulo pode conter material radioativo. O que fazer antes de qualquer análise?",
+        opcoes: ["Isolar a área e acionar a equipe responsável por segurança radiológica", "Abrir o frasco para identificar pelo cheiro", "Transferir o conteúdo para outro frasco comum"],
+        respostaCorreta: 0,
+        msgAcerto: "Exato! Isole a área e acione profissionais responsáveis; não manipule o conteúdo desconhecido.",
+        msgErro: "Não abra nem transfira o conteúdo. Isole a área e acione a equipe de segurança radiológica.",
+        morteText: "A manipulação de uma substância desconhecida sem avaliação especializada provocou uma exposição fatal."
+    },
+    {
+        tipo: "escolha",
+        titulo: "Identificação: Metal de Símbolo Ra",
+        descricao: "Em uma etiqueta antiga, você encontra o símbolo Ra. Qual elemento corresponde a esse símbolo?",
+        opcoes: ["Rádio", "Radônio", "Rênio"],
+        respostaCorreta: 0,
+        msgAcerto: "Correto! Ra é o símbolo químico do Rádio.",
+        msgErro: "O símbolo Ra corresponde ao Rádio; Radônio tem símbolo Rn.",
+        morteText: "A exposição desnecessária a uma amostra de Rádio sem proteção adequada encerrou sua jornada."
+    },
+    {
+        tipo: "escolha",
+        titulo: "Biologia: Efeito da Radiação nas Células",
+        descricao: "A radiação ionizante pode danificar o material genético das células. Como esse efeito é aproveitado na radioterapia?",
+        opcoes: ["Para dificultar a multiplicação de células tumorais", "Para transformar células tumorais em células saudáveis", "Para eliminar a necessidade de avaliação médica"],
+        respostaCorreta: 0,
+        msgAcerto: "Isso mesmo! A radioterapia pode danificar o DNA das células tumorais e dificultar sua multiplicação.",
+        msgErro: "A radiação pode danificar o DNA e dificultar a multiplicação das células tumorais; o tratamento exige acompanhamento médico.",
+        morteText: "Ignorar os riscos e os cuidados médicos durante um tratamento com radiação teve consequências fatais."
+    },
+    {
+        tipo: "escolha",
+        titulo: "Medida: Dose Absorvida",
+        descricao: "Em uma pesquisa sobre os efeitos da radiação nos tecidos, qual unidade mede a energia absorvida por unidade de massa?",
+        opcoes: ["Gray (Gy)", "Sievert (Sv)", "Becquerel (Bq)"],
+        respostaCorreta: 0,
+        msgAcerto: "Correto! O gray mede a dose absorvida, isto é, a energia depositada por unidade de massa.",
+        msgErro: "A dose absorvida é medida em gray (Gy); sievert considera efeitos biológicos e becquerel mede atividade radioativa.",
+        morteText: "A falta de controle da dose durante o experimento causou danos irreversíveis à saúde."
+    },
+    {
+        tipo: "escolha",
+        titulo: "Medida: Efeito Biológico",
+        descricao: "Ao comparar os possíveis efeitos biológicos da radiação em pessoas, qual unidade é usada para expressar a dose equivalente?",
+        opcoes: ["Sievert (Sv)", "Gray (Gy)", "Watt (W)"],
+        respostaCorreta: 0,
+        msgAcerto: "Exato! O sievert considera o efeito biológico da radiação; a avaliação deve ser feita por profissionais.",
+        msgErro: "A unidade é o sievert (Sv). Gray mede dose absorvida, enquanto watt mede potência.",
+        morteText: "A exposição sem avaliação adequada dos riscos biológicos foi fatal."
+    },
+    {
+        tipo: "escolha",
+        titulo: "Decaimento: Meia-Vida",
+        descricao: "Uma amostra radioativa passa por uma meia-vida. O que acontece com a quantidade de núcleos radioativos ainda não decaídos?",
+        opcoes: ["Cai para aproximadamente metade", "Desaparece completamente", "Dobra"],
+        respostaCorreta: 0,
+        msgAcerto: "Isso mesmo! Após uma meia-vida, resta aproximadamente metade dos núcleos radioativos que ainda não decaíram.",
+        msgErro: "Meia-vida é o tempo necessário para que metade dos núcleos radioativos ainda não decaídos se desintegre.",
+        morteText: "Interpretar incorretamente o decaimento da amostra levou a uma exposição fatal."
+    },
+    {
+        tipo: "escolha",
+        titulo: "Proteção: Princípio ALARA",
+        descricao: "Ao planejar uma atividade profissional com fontes radioativas, qual atitude está de acordo com o princípio de manter a exposição tão baixa quanto razoavelmente possível?",
+        opcoes: ["Seguir o plano de segurança, reduzir o tempo de exposição e usar distância e blindagem adequadas", "Trabalhar mais perto da fonte para terminar rapidamente", "Retirar a blindagem para observar melhor a fonte"],
+        respostaCorreta: 0,
+        msgAcerto: "Correto! O princípio ALARA orienta reduzir a exposição com planejamento, tempo, distância e blindagem adequados.",
+        msgErro: "A exposição deve ser reduzida com planejamento e proteção apropriada, sempre seguindo a orientação de profissionais qualificados.",
+        morteText: "Desconsiderar os protocolos profissionais de proteção radiológica levou a uma exposição fatal."
     }
 ];
